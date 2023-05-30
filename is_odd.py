@@ -8,6 +8,13 @@ def is_odd(x):
     false if x is even
     Exception if no integer
     """
+    evenCheck = false;
+    try:
+        evenCheck = is_even(x)
+    except:   
+        raise('Exception')
+    return not evenCheck    
+    
 
 
 
@@ -15,3 +22,11 @@ def is_odd(x):
 assert is_even is not None
 
 assert is_odd.__doc__ is not None
+
+exception_created = False;
+try:
+    is_odd('asgaerw')
+except:
+    exception_created = True
+    
+assert exception_created     
